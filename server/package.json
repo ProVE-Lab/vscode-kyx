@@ -1,0 +1,24 @@
+{
+  "name": "kyx-language-server",
+  "version": "1.0.0",
+  "description": "Language server for KYX extension",
+  "author": "PROVE LAB",
+  "license": "GPL-2.0-only",
+  "main": "./out/server.js",
+  "scripts": {
+    "compile": "tsc -b",
+    "watch": "tsc -b -w"
+  },
+  "activationEvents": [
+    "onLanguage:kyx"
+  ],
+  "dependencies": {
+    "vscode-languageserver": "^7.0.0",
+    "vscode-languageserver-textdocument": "^1.0.11",
+    "vscode-uri": "^3.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.5.7",
+    "typescript": "^5.2.2"
+  }
+}

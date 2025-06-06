@@ -1,0 +1,71 @@
+{
+  "name": "kyx-extension-client",
+  "version": "1.0.0",
+  "description": "Client for KYX extension",
+  "author": "PROVE LAB",
+  "license": "GPL-2.0-only",
+  "main": "./out/extension.js",
+  "icon": "icon.png",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -b",
+    "watch": "tsc -b -w"
+  },
+  "devDependencies": {
+    "@types/node": "^20.5.7",
+    "typescript": "^5.2.2",
+    "vscode": "^1.1.37"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^8.1.0",
+    "vscode-languageserver-textdocument": "^1.0.11"
+  },
+  "activationEvents": [
+    "onLanguage:kyx",
+    "onCommand:kyx.checkProof"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "kyx",
+        "aliases": [
+          "KYX",
+          "kyx"
+        ],
+        "extensions": [
+          ".kyx"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "kyx",
+        "scopeName": "source.kyx",
+        "path": "./syntaxHighlight/kyx-syntax.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "kyx.checkProof",
+        "title": "KYX: Check Proof",
+        "category": "KYX"
+      }
+    ],
+    "configuration": {
+      "title": "KYX Extension",
+      "properties": {
+        "kyx.keymaeraPath": {
+          "type": "string",
+          "default": "",
+          "description": "path to keymaerax-core.jar"
+        },
+        "kyx.z3Path": {
+          "type": "string",
+          "default": "",
+          "description": "path to Z3 binary"
+        }
+      }
+    }
+  }
+}

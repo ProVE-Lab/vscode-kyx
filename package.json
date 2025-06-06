@@ -1,0 +1,52 @@
+{
+  "name": "kyx-extension",
+  "description": "VSCode extension for KYX files",
+  "author": "PROVE LAB",
+  "license": "GPL-2.0-only",
+  "version": "1.0.0",
+  "publisher": "PROVE-Lab",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "activationEvents": [
+    "onLanguage:kyx"
+  ],
+  "main": "./client/out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "kyx",
+        "aliases": [
+          "KYX",
+          "kyx"
+        ],
+        "extensions": [
+          ".kyx"
+        ],
+        "configuration": "./client/language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "kyx",
+        "scopeName": "source.kyx",
+        "path": "./client/syntaxHighlight/kyx-syntax.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -b",
+    "watch": "tsc -b -w"
+  },
+  "devDependencies": {
+    "@types/node": "^20.5.7",
+    "@types/vscode": "^1.97.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^8.1.0",
+    "vscode-languageserver-textdocument": "^1.0.11",
+    "vscode-uri": "^3.1.0"
+  }
+}
