@@ -48,8 +48,8 @@ const executeKeymaeraX = (
     }
 
     const javaPath = "java";
-    let command = `${javaPath} -jar "${keymaeraPath}" prove`;
-    command += ` "${inputFilePath}#${archiveEntry}" "${outputFilePath}" --tactic-name "${tacticName}" --z3path "${z3Path}"`;
+    let command = `${javaPath} -da -jar "${keymaeraPath}" -launch -prove`;
+    command += ` "${inputFilePath}#${archiveEntry}" -out "${outputFilePath}" -tacticName "${tacticName}" -z3path "${z3Path}"`;
     
     exec(command, (error, stdout, stderr) => {
       const output = stdout + stderr;
