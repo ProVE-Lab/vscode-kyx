@@ -29,8 +29,14 @@ git clone https://github.com/ProVE-Lab/vscode-kyx.git
 cd vscode-kyx
 ````
 ---
+### 2. Install typescript globally
+This project requires typescript. If you haven't already, install this:
 
-### 2. Install Dependencies
+```bash 
+npm install -g typescript
+```
+
+### 3. Install Dependencies
 
 Install packages separately in both `client/` and `server/` directories:
 
@@ -43,13 +49,18 @@ npm install
 ```
 ---
 
-### 3. Configure Settings
+### 4. Configure Settings
 
 Before using the proof checking feature, configure the following paths in your VS Code settings:
 
 * `keymaerax-core.jar` (KeYmaeraX)
 * Z3 
 
+To check the path to Z3, run this command:
+
+```bash
+which z3
+```
 **Steps:**
 
 1. Open the Command Palette:

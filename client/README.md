@@ -31,8 +31,12 @@ The Check Proof feature in action inside VS Code:
 * `keymaerax-core.jar` (KeYmaeraX)
 * Z3 
 
-**Steps:**
+To check the path to Z3, run this command:
 
+```bash
+which z3
+```
+**Steps:**
 1. Open the Command Palette:
 
    * On macOS: `Cmd + Shift + P`
@@ -49,3 +53,4 @@ The Check Proof feature in action inside VS Code:
 ```
 
 ---
+
